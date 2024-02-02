@@ -6,9 +6,12 @@ import Statistics from './Statistics/Statistics.jsx';
 
 export const App = () => {
   const countTotalFeedback = () => {
-    setTotal(total + 1);
+    setState(prevState => {
+      const { good, neutral, bad } = prevState;
+      setTotal(good + neutral + bad);
+      return prevState;
+    });
   };
-
   const countPositiveFeedbackPercentage = () => {
     if (total === 0) {
       return 0;
