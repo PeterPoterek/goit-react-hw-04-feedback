@@ -12,6 +12,7 @@ export const App = () => {
       return prevState;
     });
   };
+
   const countPositiveFeedbackPercentage = () => {
     if (total === 0) {
       return 0;
